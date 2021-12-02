@@ -1,0 +1,8 @@
+PUT http://localhost:5016/transactions/4 HTTP/1.1
+content-type: application/json
+
+{
+    "itemname": "Cola",
+    "qty": 1,
+    "price": 500
+}

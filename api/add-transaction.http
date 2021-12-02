@@ -1,0 +1,8 @@
+POST http://localhost:5016/transactions HTTP/1.1
+content-type: application/json
+
+{
+    "itemname": "Colo",
+    "qty": 1,
+    "price": 500
+}

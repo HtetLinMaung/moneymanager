@@ -1,8 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using moneymanager.Models;
+using moneymanager.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddDbContext<MMContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("MoneyManagerConnection")));
 builder.Services.AddControllers();
+builder.Services.AddScoped<ITransactionRepo, TransactionRepo>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
